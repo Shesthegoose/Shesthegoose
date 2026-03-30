@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Home — She's the Goose</title>
+<meta name="description" content="The pieces that make a home feel like yours. Curated, considered, and linked.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Jost:wght@200;300;400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #F2EDE4;
+    --parchment: #EDE7DC;
+    --ink: #1A1714;
+    --ink-light: #58524A;
+    --stone: #8C7E6E;
+    --stone-light: #B5A898;
+    --terracotta: #8A5A42;
+    --sage: #6A7A62;
+    --border: #D8D0C4;
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --sans: 'Jost', sans-serif;
+    --footer: #3A3935;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: var(--serif);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.6rem 5vw;
+    border-bottom: 1px solid var(--border);
+    background: var(--cream);
+    position: sticky;
+    top: 0;
+    z-index: 200;
+  }
+  .nav-logo {
+    font-family: var(--serif);
+    font-size: 1.05rem;
+    font-weight: 400;
+    letter-spacing: .05em;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .nav-right { display: flex; align-items: center; gap: 2.4rem; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    font-family: var(--sans);
+    font-size: .56rem;
+    font-weight: 300;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--ink-light);
+    text-decoration: none;
+    transition: color .2s;
+  }
+  .nav-links a:hover { color: var(--terracotta); }
+  .nav-sister a {
+    font-family: var(--sans);
+    font-size: .54rem;
+    font-weight: 300;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--sage);
+    text-decoration: none;
+    border-bottom: 1px solid var(--sage);
+    padding-bottom: 1px;
+  }
+
+  /* HERO — two column */
+  .page-hero {
+    width: 100%;
+    min-height: 90vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    overflow: hidden;
+    background: var(--cream);
+  }
+  .page-hero-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 8rem 5vw 12rem 9vw;
+  }
+  .page-hero-eyebrow {
+    font-family: var(--sans);
+    font-size: .48rem;
+    font-weight: 200;
+    letter-spacing: .32em;
+    text-transform: uppercase;
+    color: var(--stone-light);
+    display: block;
+    margin-bottom: 2rem;
+  }
+  .page-hero-text h1 {
+    font-family: var(--serif);
+    font-size: clamp(3.4rem, 5.8vw, 6.9rem);
+    font-weight: 300;
+    color: #4A4642;
+    line-height: 1.04;
+    letter-spacing: -.01em;
+    margin-bottom: 2.2rem;
+  }
+  .page-hero-text p {
+    font-family: var(--serif);
+    font-size: 1.125rem;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--ink-light);
+    line-height: 2.15;
+    max-width: 380px;
+  }
+  .page-hero-image {
+    overflow: hidden;
+    height: 90vh;
+    min-height: 560px;
+  }
+  .page-hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+
+  /* INTRO */
+  .page-intro {
+    padding: 7rem 5vw 5.5rem;
+    max-width: 640px;
+    margin: 0 auto;
+  }
+  .page-intro p {
+    font-family: var(--serif);
+    font-size: 1.32rem;
+    font-weight: 300;
+    font-style: italic;
+    color: #2E2820;
+    line-height: 2.3;
+    margin-bottom: 2rem;
+  }
+  .page-intro p:last-child { margin-bottom: 0; }
+
+  /* SECTION HEADER */
+  .section-header {
+    padding: 6rem 5vw 2rem;
+  }
+  .section-header h2 {
+    font-family: var(--serif);
+    font-size: clamp(2.6rem, 4vw, 4.2rem);
+    font-weight: 300;
+    color: #4A4642;
+    letter-spacing: -.01em;
+    margin-bottom: 1.2rem;
+  }
+  .section-header p {
+    font-family: var(--serif);
+    font-size: 1.05rem;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--ink-light);
+    line-height: 2;
+    max-width: 500px;
+  }
+  .section-divider {
+    margin: 2.5rem 5vw 5rem;
+    height: 1px;
+    background: var(--border);
+  }
+
+  /* PRODUCT GRID */
+  .product-grid {
+    padding: 0 6vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 9rem 6rem;
+    margin-bottom: 0;
+    background: var(--cream);
+  }
+  .product-item {}
+  .product-img {
+    width: 100%;
+    aspect-ratio: 3/2;
+    overflow: hidden;
+    margin-bottom: 2.8rem;
+    background: var(--parchment);
+  }
+  .product-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    transition: transform .9s ease;
+  }
+  .product-item:hover .product-img img { transform: scale(1.03); }
+  .product-name {
+    font-family: var(--serif);
+    font-size: 1.3rem;
+    font-weight: 300;
+    color: var(--ink);
+    line-height: 1.2;
+    letter-spacing: -.01em;
+    margin-bottom: 1rem;
+    display: block;
+    max-width: 88%;
+  }
+  .product-desc {
+    font-family: var(--serif);
+    font-size: 1.06rem;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--ink-light);
+    line-height: 2;
+    margin-bottom: 1.8rem;
+    display: block;
+    max-width: 88%;
+  }
+  .product-link {
+    font-family: var(--sans);
+    font-size: .44rem;
+    font-weight: 200;
+    letter-spacing: .24em;
+    text-transform: uppercase;
+    color: var(--stone-light);
+    text-decoration: none;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 2px;
+    transition: color .2s;
+    display: inline-block;
+  }
+  .product-link:hover { color: var(--terracotta); }
+
+  /* LIFESTYLE MOMENT */
+  .lifestyle-moment {
+    width: 100%;
+    height: 80vh;
+    min-height: 500px;
+    overflow: hidden;
+    margin: 8rem 0;
+  }
+  .lifestyle-moment img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+
+  /* FULL WIDTH IMAGE */
+  .full-img {
+    width: 100%;
+    height: 75vh;
+    min-height: 480px;
+    overflow: hidden;
+  }
+  .full-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+
+  /* COLLECTED HOME */
+  .collected-section { margin-top: 9rem; }
+  .collected-header { padding: 0 5vw 4.5rem; }
+  .collected-header h2 {
+    font-family: var(--serif);
+    font-size: clamp(2.6rem, 4vw, 4.2rem);
+    font-weight: 300;
+    color: #4A4642;
+    letter-spacing: -.01em;
+  }
+
+  /* CLOSING */
+  .closing {
+    padding: 12rem 5vw 10rem;
+    text-align: center;
+  }
+  .closing p {
+    font-family: var(--serif);
+    font-size: clamp(1.9rem, 3.2vw, 3.2rem);
+    font-weight: 300;
+    font-style: italic;
+    color: #4A4642;
+    letter-spacing: .01em;
+  }
+
+  /* AFFILIATE */
+  .affiliate-notice {
+    padding: 3rem 5vw 5rem;
+    border-top: 1px solid var(--border);
+    font-family: var(--sans);
+    font-size: .46rem;
+    font-weight: 200;
+    letter-spacing: .08em;
+    color: var(--stone-light);
+    line-height: 1.8;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--footer);
+    border-top: 1px solid #4A4845;
+    padding: 5rem 5vw 3rem;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 4rem;
+    margin-bottom: 3.5rem;
+    padding-bottom: 3.5rem;
+    border-bottom: 1px solid #4A4845;
+  }
+  .footer-logo {
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: rgba(255,255,255,.82);
+    text-decoration: none;
+    display: block;
+    margin-bottom: 1.8rem;
+  }
+  .footer-brand p {
+    font-family: var(--serif);
+    font-size: .92rem;
+    font-weight: 300;
+    font-style: italic;
+    color: rgba(255,255,255,.3);
+    line-height: 1.8;
+  }
+  .footer-col-label {
+    font-family: var(--sans);
+    font-size: .44rem;
+    font-weight: 200;
+    letter-spacing: .28em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.3);
+    display: block;
+    margin-bottom: 1.6rem;
+  }
+  .footer-nav { list-style: none; display: flex; flex-direction: column; gap: 1rem; }
+  .footer-nav a {
+    font-family: var(--serif);
+    font-size: .98rem;
+    font-weight: 300;
+    color: rgba(255,255,255,.42);
+    text-decoration: none;
+    transition: color .2s;
+  }
+  .footer-nav a:hover { color: rgba(255,255,255,.85); }
+  .footer-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .footer-bottom p {
+    font-family: var(--sans);
+    font-size: .46rem;
+    font-weight: 200;
+    letter-spacing: .1em;
+    color: rgba(255,255,255,.2);
+  }
+
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .page-hero { grid-template-columns: 1fr; }
+    .page-hero-image { height: 60vw; min-height: 300px; }
+    .page-hero-text { padding: 5rem 5vw; }
+    .product-grid { grid-template-columns: 1fr; gap: 4rem; }
+    .footer-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">She's the Goose</a>
+  <div class="nav-right">
+    <ul class="nav-links">
+      <li><a href="table.html">The Table</a></li>
+      <li><a href="kitchen.html">The Kitchen</a></li>
+      <li><a href="home.html">The Home</a></li>
+      <li><a href="finds.html">The Collection</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+    <div class="nav-sister"><a href="https://thequietledger.co" target="_blank">The Quiet Ledger →</a></div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="page-hero">
+  <div class="page-hero-text">
+    <span class="page-hero-eyebrow">She's the Goose</span>
+    <h1>The Home</h1>
+    <p>The details that make a space feel like yours — gathered slowly, chosen carefully, and worth every corner they occupy.</p>
+  </div>
+  <div class="page-hero-image">
+    <img src="IMG_A3A20D599DED428A85144F9A452CC2F3.jpeg" alt="Olive jar with lemons on linen" style="object-position: center 30%;">
+  </div>
+</div>
+
+<!-- INTRO -->
+<div class="page-intro">
+  <p>A home isn't decorated in a day. It's built over time — one object at a time, one corner at a time. The pieces here are the ones that stayed. Not because they were expensive or carefully sourced, but because they kept earning their place.</p>
+  <p>These are the things I reach for when I want a room to feel finished. They're simple, beautiful, and worth having.</p>
+</div>
+
+<!-- THE DETAILS -->
+<div class="section-header">
+  <h2>The Details</h2>
+  <p>The small things that carry the most weight. A vase, a candle, a bowl — the pieces you stop noticing but would immediately miss.</p>
+</div>
+<div class="section-divider"></div>
+
+<div class="product-grid">
+
+  <div class="product-item">
+    <div class="product-img">
+      <img src="IMG_2357.jpeg" alt="Orange freesia in white ribbed ceramic vase">
+    </div>
+    <span class="product-name">Capri Blue Volcano Candle</span>
+    <span class="product-desc">The scent that has lived in this house for years. The one guests always ask about. I keep one in every room and replace it without thinking.</span>
+    <a href="https://amzn.to/47LHbsZ" class="product-link" target="_blank" rel="nofollow sponsored">View Here →</a>
+  </div>
+
+  <div class="product-item">
+    <div class="product-img">
+      <img src="IMG_4C8D459D85554C32B36A3AE2B3F67B95.jpeg" alt="Ceramic birds with nest and eggs on linen">
+    </div>
+    <span class="product-name">Creative Co-op Ceramic Birds</span>
+    <span class="product-desc">They sit on the shelf, the mantle, the table. Quiet and beautiful — the kind of thing that makes a space feel collected rather than decorated.</span>
+    <a href="https://amzn.to/4s6rYeg" class="product-link" target="_blank" rel="nofollow sponsored">View Here →</a>
+  </div>
+
+  <div class="product-item">
+    <div class="product-img">
+      <img src="IMG_6835A15AAAF74C7A8E3C894F7329BC9A.jpeg" alt="Wood bowl with beads and freesia on linen">
+    </div>
+    <span class="product-name">Hyoola Taper Candles</span>
+    <span class="product-desc">Tall, clean, unscented. Beautiful in a holder, on the table, or clustered together. The candles that never disappoint.</span>
+    <a href="https://amzn.to/4scB3lK" class="product-link" target="_blank" rel="nofollow sponsored">View Here →</a>
+  </div>
+
+  <div class="product-item">
+    <div class="product-img">
+      <img src="IMG_2314.jpeg" alt="Ranunculus anemone lilac arrangement with beads on linen">
+    </div>
+    <span class="product-name">Cozecube Knit Throw</span>
+    <span class="product-desc">The throw that lives on every sofa. Soft without being precious, warm without being heavy. The one that actually gets used every single day.</span>
+    <a href="https://amzn.to/47JCboI" class="product-link" target="_blank" rel="nofollow sponsored">View Here →</a>
+  </div>
+
+</div>
+
+<!-- LIFESTYLE MOMENT -->
+<div class="lifestyle-moment">
+  <img src="IMG_C6AEE6453B3946218F881DE36CC1694C.jpeg" alt="Magnolia in white vase" style="object-position: center 40%;">
+</div>
+
+<!-- ON THE SHELF -->
+<div class="section-header">
+  <h2>On the Shelf</h2>
+  <p>The books and objects that do more than sit there. The ones that start conversations and quietly say something about the room.</p>
+</div>
+<div class="section-divider"></div>
+
+<div class="product-grid">
+
+  <div class="product-item">
+    <div class="product-img">
+      <img src="IMG_2148E661372B4B74AC142325AEBADA7C.jpeg" alt="Magnolia in white vase on linen">
+    </div>
+    <span class="product-name">The Art of Home — Shea McGee</span>
+    <span class="product-desc">The book that changed how I think about rooms. Beautiful to look at, genuinely useful to read. It lives on the coffee table and gets picked up regularly.</span>
+    <a href="https://amzn.to/4bwnQNP" class="product-link" target="_blank" rel="nofollow sponsored">View Here →</a>
+  </div>
+
+  <div class="product-item">
+    <div class="product-img">
+      <img src="IMG_A3A20D599DED428A85144F9A452CC2F3.jpeg" alt="Olive jar with lemons and wood bowl on linen">
+    </div>
+    <span class="product-name">Peonies — Botanical Art Book</span>
+    <span class="product-desc">One of the most beautiful books I own. Every page is worth stopping on. Stacked on a shelf or left open on a table — it makes any room feel more considered.</span>
+    <a href="https://amzn.to/47NE2ZI" class="product-link" target="_blank" rel="nofollow sponsored">View Here →</a>
+  </div>
+
+</div>
+
+<!-- A COLLECTED HOME -->
+<div class="collected-section">
+  <div class="collected-header">
+    <h2>A Collected Home</h2>
+  </div>
+  <div class="full-img">
+    <img src="IMG_2314.jpeg" alt="A collected home — ranunculus and beads on linen" style="object-position: center 25%;">
+  </div>
+</div>
+
+<!-- CLOSING -->
+<div class="closing">
+  <p>A home is never finished. That's the whole point.</p>
+</div>
+
+<!-- AFFILIATE -->
+<div class="affiliate-notice">
+  Some links on this page are affiliate links. She's the Goose earns a small commission at no cost to you. Everything recommended is genuinely owned and used.
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="footer-logo">She's the Goose</a>
+      <p>The home, the table, the kitchen — and the life pieces worth recommending because they're worth having.</p>
+    </div>
+    <div>
+      <span class="footer-col-label">Shop</span>
+      <ul class="footer-nav">
+        <li><a href="table.html">The Table</a></li>
+        <li><a href="kitchen.html">The Kitchen</a></li>
+        <li><a href="home.html">The Home</a></li>
+        <li><a href="finds.html">The Collection</a></li>
+      </ul>
+    </div>
+    <div>
+      <span class="footer-col-label">More</span>
+      <ul class="footer-nav">
+        <li><a href="about.html">About</a></li>
+        <li><a href="https://thequietledger.co" target="_blank">The Quiet Ledger</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 She's the Goose</p>
+  </div>
+</footer>
+
+</body>
+</html>
