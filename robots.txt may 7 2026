@@ -1,0 +1,7 @@
+# She's the Goose
+# Welcome, search engines.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://shesthegoose.com/sitemap.xml
