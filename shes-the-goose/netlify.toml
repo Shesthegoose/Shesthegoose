@@ -1,9 +1,7 @@
 # She's the Goose — Netlify configuration
+# The site lives at the repository root. Publish the root, build nothing.
 [build]
-  # Static site: nothing to build. The generated pages live in /site.
   publish = "."
-
-# 404.html in the publish directory is served automatically for missing pages.
 
 [[headers]]
   for = "/fonts/*"

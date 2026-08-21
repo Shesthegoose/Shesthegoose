@@ -6,7 +6,7 @@ from content_letters import LETTERS
 from content_recipes import RECIPES, SUPPERS, EDIT
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SITE = os.path.join(ROOT, "site")
+SITE = ROOT  # pages live at the repository root
 TOPLINK = '\n  <div class="measure toplink"><a class="rulelink" href="#top">Back to top<span class="arw">&uarr;</span></a></div>\n'
 NAV = [("Home","index.html"),("Kitchen","kitchen.html"),("Table","table.html"),
        ("Garden","garden.html"),("The Edit","the-edit.html"),("Recipes","recipes.html"),
