@@ -1,7 +1,7 @@
 # She's the Goose — Netlify configuration
 [build]
   # Static site: nothing to build. The generated pages live in /site.
-  publish = "site"
+  publish = "."
 
 # 404.html in the publish directory is served automatically for missing pages.
 
