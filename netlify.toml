@@ -1,7 +1,16 @@
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 404
-
+# She's the Goose — Netlify configuration
 [build]
-  publish = "."
+  # Static site: nothing to build. The generated pages live in /site.
+  publish = "site"
+
+# 404.html in the publish directory is served automatically for missing pages.
+
+[[headers]]
+  for = "/fonts/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
