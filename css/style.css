@@ -65,6 +65,11 @@ a:focus-visible,button:focus-visible,input:focus-visible{ outline:1px solid var(
   font-size:clamp(1rem,1.35vw,1.125rem); line-height:1.6; color:var(--ink-soft);
   max-width:44ch; margin:1.05rem 0 0; }
 .dept-rule{ height:1px; background:var(--rule); }
+/* Seasonal flower border: a full-width strip used in place of the rule under a
+   department heading. Use an edge-to-edge floral photo (no table showing). */
+.flower-border{ margin:0 0 clamp(1.5rem,3vw,2.5rem); }
+.flower-border img{ display:block; width:100%; aspect-ratio:6/1; object-fit:cover; }
+@media (max-width:640px){ .flower-border img{ aspect-ratio:3/1; } }
 
 /* ---------- full bleed ---------- */
 .bleed{ margin:0; }
