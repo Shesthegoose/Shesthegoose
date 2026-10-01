@@ -785,6 +785,9 @@ a:hover .lt-title{ color:var(--oxblood); }
     padding-left:0; padding-top:clamp(1.6rem,4vw,2.2rem); }
   .home-depts .row3{ grid-template-columns:1fr; }
   .home-recipes .grid{ grid-template-columns:1fr; }
+  /* The "collections" link carries an inline grid-column:2 for desktop; on a
+     single column that created a phantom second column and shrank the lead photo. */
+  .home-recipes .grid > p{ grid-column:auto !important; }
   .home-edit .cats{ grid-template-columns:1fr; }
   .home-edit .cats a{ padding-right:0; }
   .home-edit .cats a + a{ border-left:0; border-top:1px solid var(--rule); padding-left:0; }
