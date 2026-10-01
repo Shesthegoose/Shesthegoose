@@ -574,6 +574,8 @@ a:hover .lt-title{ color:var(--oxblood); }
 .breather{ padding:clamp(3.5rem,7vw,6rem) 0 0; }
 .breather img{ width:100%; aspect-ratio:21/9; object-fit:cover; }
 .breather .cap{ margin-top:.9rem; }
+/* .natural: show a long, low photo (e.g. a whole table runner) uncropped. */
+.breather img.natural{ aspect-ratio:auto; height:auto; }
 
 .home-recipes{ padding:clamp(3.5rem,7vw,6rem) 0 0; }
 .home-recipes .grid{ display:grid; grid-template-columns:1.3fr 1fr;
@@ -801,6 +803,7 @@ a:hover .lt-title{ color:var(--oxblood); }
   .results a{ grid-template-columns:1fr; }
   .results .x{ grid-column:1; }
   .breather img{ aspect-ratio:4/5; }
+  .breather img.natural{ aspect-ratio:2/1; object-position:50% 50%; }
 }
 
 /* ---------- print (recipes & letters) ---------- */
