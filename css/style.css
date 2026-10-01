@@ -159,8 +159,11 @@ a:focus-visible,button:focus-visible,input:focus-visible{ outline:1px solid var(
   align-items:start; }
 .sband figure{ margin:0; }
 .sband .frames img{ width:100%; object-fit:cover; }
+/* A season with one strong photograph instead of three. */
+.sband .frames.one{ grid-template-columns:minmax(0,34rem); }
 .sband .frames figure:first-child img{ aspect-ratio:3/2; }
 .sband .frames figure:nth-child(n+2) img{ aspect-ratio:1/1; }
+.sband .frames.one figure img{ aspect-ratio:3/4; }
 .sband .note{ font-family:var(--text); font-weight:300; font-size:.95rem; line-height:1.82;
   color:var(--ink); max-width:62ch; margin:clamp(1.5rem,2.6vw,2.1rem) 0 0;
   padding-top:1.15rem; border-top:1px solid var(--rule-soft); }
@@ -970,6 +973,10 @@ html{ scroll-behavior:smooth; }
   color:var(--ink); border-bottom:1px solid var(--rule); padding-bottom:.3rem;
   transition:color .35s ease, border-color .35s ease; }
 .prod a:hover .shop{ color:var(--oxblood); border-bottom-color:var(--oxblood); }
+/* "Where to find it": names the maker or shop, no link. When affiliate links
+   return, wrap the shop name in an <a> and nothing else needs to change. */
+.prod .src{ margin:.85rem 0 0; font-family:var(--utility); font-weight:500; font-size:.58rem;
+  letter-spacing:.2em; text-transform:uppercase; color:var(--ink-soft); }
 @media (max-width:980px){ .prods{ grid-template-columns:1fr 1fr; }
   .ec2-head{ grid-template-columns:1fr; align-items:start; } }
 @media (max-width:560px){ .prods{ grid-template-columns:1fr; } }
