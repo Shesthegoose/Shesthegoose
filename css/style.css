@@ -991,3 +991,44 @@ html{ scroll-behavior:smooth; }
   padding:0 var(--gutter); }
 .letter-body .letter-fig{ padding:0; margin:clamp(2rem,4vw,3rem) 0; }
 .letter-fig img{ width:100%; height:auto; display:block; }
+
+/* ---------- printable recipe card ----------
+   "Print this recipe" link sits under the recipe meta line on every recipe page.
+   The print rules below turn a recipe page into a compact one-sheet card:
+   no photo, no navigation, small masthead, ingredients beside the method. */
+.r-print{ margin-top:1.25rem; }
+.r-print-btn{ font-family:var(--utility); font-weight:500; font-size:.6rem; letter-spacing:.2em;
+  text-transform:uppercase; color:var(--ink-soft); background:none; border:0;
+  border-bottom:1px solid var(--rule); border-radius:0; padding:0 0 .35rem; cursor:pointer;
+  transition:color .35s ease, border-color .35s ease; }
+.r-print-btn:hover{ color:var(--oxblood); border-color:var(--oxblood); }
+.r-print-btn:focus-visible{ outline:1px solid var(--ink); outline-offset:4px; }
+@media print{
+  .r-print,.condensed,.toplink,.foot2,.strip,.nav,.r-nav,body:has(.r-open) .bleed{ display:none !important; }
+  body:has(.r-open) .measure{ max-width:none; padding:0; }
+  body:has(.r-open) .masthead{ text-align:left; padding:0 0 .5rem; border-bottom:1px solid #999; }
+  body:has(.r-open) .wordmark{ font-size:13pt; }
+  .r-open{ max-width:none; padding-top:.9rem; }
+  .r-open h1{ font-size:20pt; line-height:1.15; margin-top:.3rem; }
+  .r-open .dek{ font-size:10.5pt; line-height:1.45; margin-top:.35rem; color:#333; }
+  .r-open .meta{ margin-top:.6rem; padding-top:.45rem; color:#333; }
+  .r-body{ max-width:none; padding-top:.6rem; }
+  .r-body p{ font-size:10pt; line-height:1.5; }
+  .r-split{ grid-template-columns:185px 1fr !important; gap:1.5rem; margin-top:.9rem; padding-top:.9rem; border-color:#999; }
+  .r-ing h2,.r-method h2,.r-notes h2{ color:#000; margin-bottom:.55rem; }
+  .r-ing ul{ gap:.28rem; }
+  .r-ing li{ font-size:9.5pt; line-height:1.35; color:#000; }
+  .r-ing .grp{ margin-top:.7rem; padding-top:.55rem; }
+  .r-ing .gl{ font-size:9pt; margin-bottom:.3rem; }
+  .r-method{ max-width:none; }
+  .r-method li{ grid-template-columns:1.6rem 1fr; gap:.5rem; padding:.42rem 0; border-color:#ddd; break-inside:avoid; }
+  .r-method .n{ font-size:7pt; padding-top:.15rem; }
+  .r-method li > div p{ font-size:10pt; line-height:1.45; color:#000; }
+  .r-method p[style]{ margin-top:.3rem !important; }
+  .r-method li > div > p:first-child{ margin-top:0 !important; }
+  .r-method figure{ display:none; }
+  .r-notes{ margin-top:.9rem; padding:.75rem 0 0; border-top:1px solid #999; break-inside:avoid; }
+  .r-notes .inner{ max-width:none; padding:0; }
+  .r-notes p{ font-size:9.5pt; line-height:1.45; }
+  .r-notes p + p{ margin-top:.4rem; }
+}
