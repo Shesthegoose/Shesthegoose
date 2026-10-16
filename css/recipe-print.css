@@ -1,0 +1,20 @@
+/* She's the Goose — recipe print proof. Only affects printing. */
+@media print {
+ @page { size: auto; margin: .65in; }
+ html,body,.page { background:#fff!important;color:#171717!important; width:auto!important; }
+ .strip,.masthead,.nav,.nav-mobile,.condensed,.menu-overlay,.bleed,.r-body,.r-notes,.r-nav,.foot2,.print-recipe-button,script { display:none!important; }
+ .measure,.r-open,.r-split,.r-ing,.r-method { display:block!important; width:100%!important; max-width:none!important; margin:0!important; padding:0!important; border:0!important; box-shadow:none!important; }
+ .r-open { padding-bottom:12pt!important; border-bottom:1px solid #bbb!important; margin-bottom:18pt!important; }
+ .r-open h1 { font:normal 26pt Georgia,serif!important; margin:0 0 8pt!important; }
+ .r-open .dek { font:italic 10pt Georgia,serif!important; line-height:1.4!important; }
+ .r-open .meta { font:9pt Arial,sans-serif!important; display:flex!important; gap:12pt!important; flex-wrap:wrap!important; }
+ .r-ing { margin-bottom:16pt!important; }
+ .r-ing h2,.r-method h2 { font:normal 16pt Georgia,serif!important; margin:0 0 8pt!important; }
+ .r-ing ul { columns:2; column-gap:24pt; padding-left:18pt!important; }
+ .r-ing li,.r-method li,.r-method p { font:10pt/1.45 Georgia,serif!important; color:#171717!important; }
+ .r-method ol { padding-left:20pt!important; }
+ .r-method li { break-inside:avoid; page-break-inside:avoid; margin-bottom:9pt!important; }
+ .r-method .n { display:none!important; }
+ a { color:inherit!important; text-decoration:none!important; }
+ * { text-shadow:none!important; }
+}
