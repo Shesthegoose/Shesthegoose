@@ -43,7 +43,12 @@
     <div class="grp"><a href="index.html">Home</a><a href="kitchen.html">Kitchen</a><a href="table.html">Table</a><a href="garden.html">Garden</a><a href="the-edit.html">The Edit</a><a href="recipes.html">Recipes</a><a href="about.html">About</a><a href="search.html">Search</a><a href="letters/index.html">Letters</a></div>
   </div>
 
+  <!-- FROM THE HOUSE — how to maintain
+       Each piece is one <article class="fh-item">. To mark one sold, change
+       <p class="fh-status">Available</p> to <p class="fh-status sold">Sold</p>.
+       "Ask about this piece" links open an email with the piece name in the subject. -->
   <style>
+  .fh-status.sold{color:var(--ink-soft)}
   .fh-intro{max-width:640px}
   .fh-list{margin-top:clamp(2rem,4vw,3.5rem)}
   .fh-item{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(2rem,5vw,5rem);align-items:center;padding:clamp(2.5rem,5vw,4.5rem) 0;border-top:1px solid var(--rule)}
@@ -65,35 +70,35 @@
     <p class="stand">Arrangements I made for this house, in the colors of the season. Each one is a single piece, and when it&rsquo;s gone, it&rsquo;s gone. They&rsquo;re faux, so they last for years, and they&rsquo;re large and heavy, so for now they&rsquo;re local pickup only.</p>
   </section>
   <section class="measure fh-list">
-    <article class="fh-item">
+    <article id="fig-pot" class="fh-item">
       <figure><img src="images/house-fig-pot.jpg" alt="The Fig Pot, a faux floral arrangement" loading="lazy"></figure>
       <div class="fh-text">
         <p class="eyebrow">No. 01 &middot; One of one</p>
         <h2>The Fig Pot</h2>
         <p class="fh-desc">Figs, wild berry stems, pale grasses and a single orange poppy, gathered loosely in a fluted glazed pot.</p>
-        <dl class="fh-spec"><div><dt>Size</dt><dd>36 in. tall, 28 in. wide</dd></div><div><dt>Flowers</dt><dd>Faux, made to last</dd></div><div><dt>Pickup</dt><dd>Local only, [your town], CT</dd></div><div><dt>Price</dt><dd>$__</dd></div></dl>
+        <dl class="fh-spec"><div><dt>Size</dt><dd>36 in. tall, 28 in. wide</dd></div><div><dt>Flowers</dt><dd>Faux, made to last</dd></div><div><dt>Pickup</dt><dd>Local only, [your town], CT</dd></div><div><dt>Price</dt><dd>$245, plus CT sales tax</dd></div></dl>
         <p class="fh-status">Available</p>
         <a class="rulelink" href="#" onclick="return false">Ask about this piece</a>
       </div>
     </article>
-    <article class="fh-item flip">
+    <article id="sunflower-jug" class="fh-item flip">
       <figure><img src="images/house-sunflower-jug.jpg" alt="Sunflowers and Magnolia, a faux floral arrangement" loading="lazy"></figure>
       <div class="fh-text">
         <p class="eyebrow">No. 02 &middot; One of one</p>
         <h2>Sunflowers &amp; Magnolia</h2>
         <p class="fh-desc">Faded sunflowers, cream magnolias and plum hydrangea in an old rustic jug. Full and generous.</p>
-        <dl class="fh-spec"><div><dt>Size</dt><dd>About __ in. tall</dd></div><div><dt>Flowers</dt><dd>Faux, made to last</dd></div><div><dt>Pickup</dt><dd>Local only, [your town], CT</dd></div><div><dt>Price</dt><dd>$__</dd></div></dl>
+        <dl class="fh-spec"><div><dt>Size</dt><dd>About __ in. tall</dd></div><div><dt>Flowers</dt><dd>Faux, made to last</dd></div><div><dt>Pickup</dt><dd>Local only, [your town], CT</dd></div><div><dt>Price</dt><dd>$__, plus CT sales tax</dd></div></dl>
         <p class="fh-status">Available</p>
         <a class="rulelink" href="#" onclick="return false">Ask about this piece</a>
       </div>
     </article>
-    <article class="fh-item">
+    <article id="plum-magnolia" class="fh-item">
       <figure><img src="images/house-plum-magnolia.jpg" alt="Plum Hydrangea and Magnolia, a faux floral arrangement" loading="lazy"></figure>
       <div class="fh-text">
         <p class="eyebrow">No. 03 &middot; One of one</p>
         <h2>Plum Hydrangea &amp; Magnolia</h2>
         <p class="fh-desc">Plum-and-green hydrangea with cream magnolia blooms and bronze leaves, in a tiered terracotta vase.</p>
-        <dl class="fh-spec"><div><dt>Size</dt><dd>About __ in. tall</dd></div><div><dt>Flowers</dt><dd>Faux, made to last</dd></div><div><dt>Pickup</dt><dd>Local only, [your town], CT</dd></div><div><dt>Price</dt><dd>$__</dd></div></dl>
+        <dl class="fh-spec"><div><dt>Size</dt><dd>About __ in. tall</dd></div><div><dt>Flowers</dt><dd>Faux, made to last</dd></div><div><dt>Pickup</dt><dd>Local only, [your town], CT</dd></div><div><dt>Price</dt><dd>$__, plus CT sales tax</dd></div></dl>
         <p class="fh-status">Available</p>
         <a class="rulelink" href="#" onclick="return false">Ask about this piece</a>
       </div>
