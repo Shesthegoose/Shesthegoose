@@ -602,6 +602,10 @@ a:hover .lt-title{ color:var(--oxblood); }
 .home-recipes .idx .rulelink{ margin-top:1.6rem; }
 
 .home-edit{ padding:clamp(3.5rem,7vw,6rem) 0 0; }
+/* These homepage sections are paired with .measure; their padding shorthands above zero the
+   page gutter. Below the 1220px measure width that put text against the screen edge, so
+   restore the gutter there (.measure only: a nested .home-edit inside Recipes must not get it). */
+@media (max-width:1220px){ .home-depts.measure,.home-recipes.measure,.home-edit.measure{ padding-left:var(--gutter); padding-right:var(--gutter); } }
 .home-edit .head{ display:grid; grid-template-columns:1fr auto;
   gap:1.25rem clamp(2rem,4vw,4rem); align-items:end; padding-bottom:1.5rem; }
 .home-edit h2{ font-family:var(--display); font-weight:400;
