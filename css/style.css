@@ -475,6 +475,10 @@ a:hover > .ledger{ color:var(--oxblood); }
   margin:.5rem 0 0; transition:color .35s ease; }
 .r-nav a:hover h3{ color:var(--oxblood); }
 
+/* .rec-head and .coll are paired with .measure; their padding shorthands above zero the
+   page gutter. Below the 1220px measure width that left headings and cards against the
+   screen edge, so restore the gutter there. Wide desktop layout is unchanged. */
+@media (max-width:1220px){ .rec-head,.coll{ padding-left:var(--gutter); padding-right:var(--gutter); } }
 @media (max-width:980px){
   .rec-lead .type{ grid-template-columns:1fr; gap:1rem; }
   .cards{ grid-template-columns:1fr 1fr; gap:clamp(1.5rem,4vw,2.4rem) clamp(1.25rem,3vw,2rem); }
