@@ -46,3 +46,10 @@ document.addEventListener('keydown', function(e){
   }
   q.addEventListener('input',function(){render(q.value);});
 })();
+
+// product photo galleries
+document.querySelectorAll('.pgal').forEach(function(g){
+  var t=g.querySelector('.pgal-track'), d=g.querySelectorAll('.pgal-dots button');
+  d.forEach(function(b,i){ b.addEventListener('click',function(){ t.scrollTo({left:i*t.clientWidth,behavior:'smooth'}); }); });
+  t.addEventListener('scroll',function(){ var i=Math.round(t.scrollLeft/t.clientWidth); d.forEach(function(b,k){ b.classList.toggle('on',k===i); }); },{passive:true});
+});
