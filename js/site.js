@@ -1,6 +1,6 @@
 // She's the Goose — shared behavior
 function bdThanks(form){
-  var page = form.closest('.sunday, .foot');
+  var page = form.closest('.sunday, .foot, .r-sub');
   if(page){ var t = page.querySelector('.thanks') || document.getElementById('bdThanksMsg');
     if(t){ t.classList.add('show'); t.style.display='block'; } }
   setTimeout(function(){ var e=form.querySelector('input[type=email]'); if(e) e.value=''; },400);
