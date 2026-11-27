@@ -522,6 +522,9 @@ a:hover > .lockup{ color:var(--oxblood); }
 .hero-figure img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
   object-position:50% 43%; }
 .hero-type .rulelink{ margin-top:clamp(1.8rem,2.6vw,2.4rem); }
+/* Second hero band on the homepage: photo on the left, text on the right. */
+.hero-second{ border-top:1px solid var(--rule); }
+.hero-second .hero-figure{ order:-1; }
 /* Homepage hero can hold a short muted looping video instead of a photo (same crop rules). */
 .hero-figure video{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:50% 50%; }
 
